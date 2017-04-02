@@ -1,0 +1,183 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Magora OnlineStore Test",
+		"_postman_id": "9e2292b2-8686-e9db-92dd-f4e2f0fa23d7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/products",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/products",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Endpoint using Get Method that returns the list of all Products.\n\nRequires authentication"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/products",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "",
+						"description": ""
+					},
+					{
+						"key": "JSESSIONID",
+						"value": "",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Sony Bravia\",\n\t\"price\": 3499\n}"
+				},
+				"description": "Endpoint using Post Method that saves a product\n\nNeed to set the X-CSRF-TOKEN in header caught from getToken method\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/basket/1",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/basket/1",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": "Method that saves an existing product into the anonymous user basket\n\nreplace {1} for the id of an existing product\n\nNeed to set the X-CSRF-TOKEN in header caught from getToken method\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/basket/",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/basket/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Returns all the products in the basket of anonymous user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/basket/",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/basket/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Souza\",\n\t\"city\":\"Rio de Janeiro\",\n\t\"address\": \"Silva Pinto 92\"\n}"
+				},
+				"description": "Method that persists the anonymous user's order. Need to inform the client informations."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/orders",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/orders",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"from\" : \"2017-04-02 18:00:00\",\n\t\"to\": \"2017-04-02 18:04:20\"\n}"
+				},
+				"description": "Method that returns all orders based on a period of time.\n\nNeed to set the X-CSRF-TOKEN in header caught from getToken method"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/basket/1",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/basket/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Method that deletes a product from the anonymous user basket."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/token",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/token",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "After successful login, use this method to GET the Access token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/products/1",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/products/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Method that returns only one product\n\nreplace {1} by the desired id\n\nNeeds to be authenticated"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/products/1",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/products/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Method that deletes one product\n\nreplace {1} by the id of your choice\n\nneeds to be authenticated"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/products/",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/products/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "1b1d2406-d5eb-4d92-82a2-f4d92dae9e2a",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"name\": \"Microsoft X-Box One\",\n\t\"price\": 1100\n}"
+				},
+				"description": "Method used to alter information from one product,\n\nRequires authentication"
+			},
+			"response": []
+		}
+	]
+}
