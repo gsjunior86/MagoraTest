@@ -178,6 +178,17 @@
 				"description": "Method used to alter information from one product,\n\nRequires authentication"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost:8080/OnlineStore/api/version/token",
+			"request": {
+				"url": "http://localhost:8080/OnlineStore/api/version/token",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Method that returns token after authentication"
+			},
+			"response": []
 		}
 	]
 }
